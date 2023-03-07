@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ray.teamdraw.mapper.TeamMapper">
+    <select id="getPromotedTeams" resultType="ray.teamdraw.bean.Team">
+        select country_id,country_name,country_continent,country_rank from teams
+    </select>
+    <select id="getHostCountry" resultType="ray.teamdraw.bean.Team">
+        select country_id,country_name,country_continent,country_rank from teams where country_name = #{CountryName}
+    </select>
+</mapper>
